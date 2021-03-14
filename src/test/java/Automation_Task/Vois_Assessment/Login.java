@@ -32,7 +32,7 @@ public class Login {
 
 
     @Test
-    public void LogIn() {
+    public void LogIn() throws Exception{
         driver.findElement(By.className("login")).click();
 
         WebElement Email = driver.findElement(By.id("email"));
@@ -45,13 +45,17 @@ public class Login {
 
         WebElement signinbtn = driver.findElement(By.id("SubmitLogin"));
 
-        signinbtn.submit();
+        signinbtn.click();
 
+//        WebDriverWait wait = new WebDriverWait(driver, 20);
+//        WebElement successlogin = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("info-account")));
 
+        Thread.sleep(2000);
         //check user logged successfully
 
-        WebElement successlogin = driver.findElement(By.className("header_user_info"));
-        Assert.assertTrue(successlogin.getText().contains("nada tarek"));
+        WebElement successlogin = driver.findElement(By.className("info-account"));
+//        System.out.println(successlogin.getText());
+        Assert.assertTrue(successlogin.getText().toLowerCase().contains("welcome to your account"));
 
 
     }

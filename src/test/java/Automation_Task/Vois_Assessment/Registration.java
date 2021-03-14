@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Registration {
-    public static final String PATH_TO_WEBDRIVER = "src/test/resources/webdriver/chromedriver.exe";
+    public static final String PATH_TO_WEBDRIVER = "src/test/resources/webdriver/chromedriver_linux";
     WebDriver driver;
 
     //initiate driver and navigate to website
